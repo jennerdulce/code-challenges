@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/valid-anagram/
+// https://leetcode.com/problems/group-anagrams/
 
 // Problem Domain - Group Anagrams
 // Given an array of strings strs, group the anagrams together. You can return the answer in any order.
@@ -8,6 +8,7 @@
  * @param {string[]} strs
  * @return {string[][]}
  */
+
 var groupAnagrams = function(strs) {
     // create obj / map to contain all of anagrams
     let listOfAnagrams = {}
