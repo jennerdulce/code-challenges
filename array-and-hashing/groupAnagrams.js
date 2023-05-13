@@ -1,20 +1,30 @@
 // https://leetcode.com/problems/valid-anagram/
 
-// Problem Domain - Valid Anagram
+// Problem Domain - Group Anagrams
+// Given an array of strings strs, group the anagrams together. You can return the answer in any order.
 // An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.
 
 /**
- * @param {string} s
- * @param {string} t
- * @return {boolean}
+ * @param {string[]} strs
+ * @return {string[][]}
  */
- 
-var isAnagram = function(s, t) {
-    // split and sort both strings in alphabetical order
-    // create conditional statement
-    // if strings are equal => return true
-    // else => return false
-    let newS = s.split('').reverse().sort().join('')
-    let newT = t.split('').reverse().sort().join('')
-    return (newS === newT ? true : false)
+var groupAnagrams = function(strs) {
+    // create obj / map to contain all of anagrams
+    let listOfAnagrams = {}
+    // for each string:
+        // sort to alphabetical order
+        // check to see if string exists in the obj
+        // if true => add original string (not sorted) to the array of the particular anagram
+        // if false => create new anagram, set value to an array, add current string to the array
+    strs.forEach(currentStr => {
+        let sortedStr = currentStr.toLowerCase().split('').sort().join('')
+        if(listOfAnagrams[sortedStr]){
+            listOfAnagrams[sortedStr].push(currentStr.toLowerCase())
+        } else {
+            listOfAnagrams[sortedStr] = []
+            listOfAnagrams[sortedStr].push(currentStr.toLowerCase())
+        }
+    })
+    // Add all arrays of anagrams to a single list
+    return Object.values(listOfAnagrams)
 };
