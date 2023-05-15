@@ -8,7 +8,7 @@
  * @param {string} s
  * @return {boolean}
  */
-
+ 
 var isPalindrome = function(s) {
     if(s.length <= 1) return true
     let left = 0
