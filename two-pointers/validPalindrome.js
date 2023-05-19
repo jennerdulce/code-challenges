@@ -27,7 +27,7 @@ var isPalindrome = function(s) {
         left++ // first determines the left character until it is an alphanumeric char
     } else if (!/[a-zA-Z0-9]/.test(rightChar)){
         right-- // after a left char has been found,  while loop continues until a right has been found
-    } else { // after both left and right characters have been found
+    } else { // after both left and right characters have been found that are alphanumeric
         // compare letters
         if (leftChar.toLowerCase() != rightChar.toLowerCase()) {
             return false
