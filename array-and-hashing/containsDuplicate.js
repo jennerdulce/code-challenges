@@ -9,11 +9,11 @@
  */
 
 // Solution 1
-var containsDuplicate = function(nums) {
+var containsDuplicate = function (nums) {
     let visitedNums = {}
     let duplicate = false
     nums.forEach(num => {
-        if(visitedNums[num]){
+        if (visitedNums[num]) {
             duplicate = true
             return
         } else {
@@ -24,11 +24,11 @@ var containsDuplicate = function(nums) {
 };
 
 // Solution 2
-var containsDuplicate = function(nums) {
+var containsDuplicate = function (nums) {
     let duplicate = false
     let visitedNums = []
     nums.forEach(num => {
-        if (visitedNums.includes(num)){
+        if (visitedNums.includes(num)) {
             duplicate = true
             return
         } else {
@@ -36,4 +36,21 @@ var containsDuplicate = function(nums) {
         }
     })
     return duplicate
+};
+
+// Solution 3
+var containsDuplicate = function (nums) {
+    let visitedNums = {}
+    let hasDuplicate = false
+
+    while (!hasDuplicate) {
+        nums.forEach(num => {
+            if (visitedNums[num]) {
+                hasDuplicate = true
+            } else {
+                visitedNums[num] = true
+            }
+        })
+    }
+    return hasDuplicate
 };

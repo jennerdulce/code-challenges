@@ -15,8 +15,8 @@ var groupAnagrams = function(strs) {
     // for each string:
         // sort to alphabetical order
         // check to see if string exists in the obj
-        // if true => add original string (not sorted) to the array of the particular anagram
-        // if false => create new anagram, set value to an array, add current string to the array
+        // if true => add original string (not sorted) to the array of the particular anagram that is sorted
+        // if false => create new key for the anagram (sort anagram to alphabetical order), set value to an array, add current string (unsorted) to the array
     strs.forEach(currentStr => {
         let sortedStr = currentStr.toLowerCase().split('').sort().join('')
         if(listOfAnagrams[sortedStr]){
