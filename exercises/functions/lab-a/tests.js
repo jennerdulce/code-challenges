@@ -29,9 +29,11 @@ function testSumAndMultiply() { //eslint-disable-line
 }
 
 function testSumArray() { //eslint-disable-line
+  let testArray = [2, 3, 4]; //eslint-disable-line
   if (sumArray(testArray)[0] === 9 && sumArray(testArray)[1] === '2,3,4 was passed in as an array of numbers, and 9 is their sum.') {
     console.log('%c TEST FOR sumArray() PASSES', 'color: green');
   } else {
+    console.log(sumArray(testArray)[1]);
     console.log('%c TEST FOR sumArray() FAILS', 'color: red');
   }
 }
@@ -56,6 +58,6 @@ function testMultiplyAnyArray() { //eslint-disable-line
 testSum();
 testMultiply();
 testSumAndMultiply();
-// testSumArray();
+testSumArray();
 // testMultiplyArray();
 // testMultiplyAnyArray();
